@@ -8,7 +8,7 @@ const SquarePicture = styled('div')`
   height: 80px;
   width: 80px;
   border-radius: 16px;
-  background: #e1e6eb;
+  background: ${(props) => props.theme.palette.info.main};
 `;
 
 const PanelContainer = styled('div')`
@@ -16,11 +16,11 @@ const PanelContainer = styled('div')`
   height: 112px;
   width: 752px;
   border-radius: 16px;
-  background: #f0f0f6;
   padding-left: 8px;
   padding-right: 8px;
   justify-content: space-around;
   align-items: center;
+  background: ${(props) => props.theme.palette.info.light};
 `;
 
 const TextContainer = styled('div')`
@@ -32,6 +32,8 @@ const TextContainer = styled('div')`
 const StyledTitle = styled('div')`
   display: flex;
   justify-content: flex-start;
+  color: ${(props) => props.theme.palette.text.primary};
+  line-height: ${(props) => props.theme.typography.subtitle2};
 `;
 
 const TagsContainer = styled('div')`
@@ -44,6 +46,7 @@ const Date = styled('span')`
   justify-content: flex-end;
   align-items: flex-start;
   align-self: baseline;
+  color: ${(props) => props.theme.palette.text.secondary};
 `;
 
 const SecondLineContainer = styled('div')`
@@ -58,15 +61,12 @@ export const PanelArticles = ({}) => {
       <SquarePicture></SquarePicture>
       <TextContainer>
         <StyledTitle>
-          {' '}
-          <Typography variant="h6">
-            Анонс новой версии Styled Components v5: Звериный оскал
-          </Typography>
+          Анонс новой версии Styled Components v5: Звериный оскал
         </StyledTitle>
         <SecondLineContainer>
           <TagsContainer>
-            <Tag>Front-end</Tag>
-            <Tag>React</Tag>
+            <Tag label="Front-end" />
+            <Tag label="Javascript" />
           </TagsContainer>
           <Date>20.05.2020</Date>
         </SecondLineContainer>

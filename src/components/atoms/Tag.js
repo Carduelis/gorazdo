@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 const TagBack = styled('div')`
   height: ${(props) => props.theme.spacing(3) + 'px'};
   border-radius: ${(props) => props.theme.spacing(2) + 'px'};
-  background: #d8e5fb;
+  background: ${(props) => props.tagColor};
   padding-left: ${(props) => props.theme.spacing(1.5) + 'px'};
   padding-right: ${(props) => props.theme.spacing(1.5) + 'px'};
   display: flex;
@@ -20,13 +20,13 @@ const TagBack = styled('div')`
 `;
 
 const TagText = styled('span')`
-  color: #3c7eec;
+  color: ${(props) => props.textColor};
   transform: translateY(-5%);
 `;
-export const Tag = ({ children, tagColor, textColor }) => {
+export const Tag = ({ label, tagColor, textColor }) => {
   return (
-    <TagBack>
-      <TagText>{children}</TagText>
+    <TagBack tagColor={tagColor}>
+      <TagText textColor={textColor}>{label}</TagText>
     </TagBack>
   );
 };
