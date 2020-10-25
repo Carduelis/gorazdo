@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 /* 
-Добавить словари на цвета - сделать элемент универсальным для label 'Front-end', 'Javascript'
 Сделать размеры height/width/border-radius и пр. плавающими 
 */
 
