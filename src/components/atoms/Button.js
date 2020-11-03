@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const getButtonColor = (buttonThemeProperty, key = 'palette') => {
+  console.log(getButtonColor, buttonThemeProperty);
+  return (props) => {
+    console.log(props);
+    return props.theme.buttons[props[key]][buttonThemeProperty];
+  };
+};
+
 const StyledButton = styled.button`
   border: 2px solid black;
   padding: ${(props) => props.theme.spacing(1)} 0;
@@ -13,8 +21,6 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border-radius: ${(props) => props.theme.spacing(1)};
-  background-color: ${(props) => props.theme.color('primary', 'main')};
   &:focus {
     outline: none;
   }
@@ -28,3 +34,8 @@ const StyledButton = styled.button`
   }
 `;
 export default StyledButton;
+
+export const Button = (props) => {
+  console.log(props);
+  return <StyledButton {...props} />;
+};
