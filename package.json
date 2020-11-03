@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -27,7 +28,7 @@
   "scripts": {
     "start": "run-p --race dev:firebase dev:react",
     "dev:firebase": "firebase serve -p 4000",
-    "dev:react": "react-scripts start",
+    "dev:react": "set PORT=3006 && react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "cd functions && firebase deploy --only hosting:gorazdo",
@@ -36,7 +37,6 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "deploy-storybook": "storybook-to-ghpages",
-    "selenium": "cd private && cm.exe selenoid start",
     "uitest": "creevey --ui",
     "chromatic": "npx chromatic"
   },
@@ -63,7 +63,7 @@
     "@storybook/storybook-deployer": "^2.8.6",
     "babel-loader": "^8.1.0",
     "chromatic": "^5.1.0",
-    "creevey": "^0.6.4",
+    "creevey": "^0.7.0-beta.13",
     "http-proxy-middleware": "^0.20.0",
     "node-fetch": "^2.6.0",
     "npm-run-all": "^4.1.5",
