@@ -6,6 +6,9 @@ import Box from 'components/atoms/Box';
 import styled from 'styled-components';
 import { LinkIcon } from 'components/atoms/LinkIcon';
 import { UserTop } from 'components/molecules/UserTop';
+import { Text } from 'components/atoms/Text';
+import { Typography } from 'components/atoms/Typography';
+import { ContentItemMap, ContentItemWrapper } from './ContentItemMap';
 
 export const Person = () => {
   const { name } = useParams();
@@ -27,21 +30,12 @@ export const Person = () => {
             {value.docs.map((doc) => (
               <React.Fragment key={doc.id}>
                 <UserTop doc={doc} />
-                <h2>About</h2>
-                <p>
-                  I am a front-end developer with 10 years experience in web
-                  development: from responsive web-sites to SPA and
-                  micro-frontends. I strive to write pure, maintainable and well
-                  documented code. Also I have got design skills and have been
-                  working as a part-time UI/UX designer for 4 years and have a
-                  passion to implement smooth animations to apps. Since 2019 I
-                  have been conducting to several pet projects as an architect
-                  and a full-stack developer.
-                </p>
-                <h2>Highlights</h2>
-                <HighlightsContainer>
-                  {data.map(rendererLambda)}
-                </HighlightsContainer>
+                <ContentItemWrapper title={{ en: 'About' }} component="p">
+                  <Text doc={doc} path="about" />
+                </ContentItemWrapper>
+                {doc.get('content').map((contentItem) => (
+                  <ContentItemMap contentItem={contentItem} />
+                ))}
               </React.Fragment>
             ))}
           </section>

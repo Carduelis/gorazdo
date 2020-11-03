@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Typography } from 'components/atoms/Typography';
 import { Tag } from 'components/atoms/Tag';
 
-const SquarePicture = styled('div')`
+const SquarePicture = styled('img')`
   height: 80px;
   width: 80px;
   border-radius: ${(props) => props.theme.spacing(1) + 'px'};
@@ -71,10 +71,10 @@ const COLOR_FACTORS = [
     textColor: '#F15D23',
   },
 ];
-export const PanelArticles = ({ title, colorTag }) => {
+export const PanelArticles = ({ title, cover, alt, colorTag }) => {
   return (
     <PanelContainer>
-      <SquarePicture></SquarePicture>
+      <SquarePicture src={cover} alt={alt} />
       <TextContainer>
         <StyledTitle>{title}</StyledTitle>
         <SecondLineContainer>
