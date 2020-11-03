@@ -29,6 +29,7 @@ export const Person = () => {
           <section>
             {value.docs.map((doc) => (
               <React.Fragment key={doc.id}>
+                {console.log(doc.data())}
                 <UserTop doc={doc} />
                 <ContentItemWrapper title={{ en: 'About' }} component="p">
                   <Text doc={doc} path="about" />
