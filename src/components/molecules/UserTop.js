@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import anna from '../../pages/anna_s.json';
 import Box from 'components/atoms/Box';
 import { Avatar } from 'components/atoms/Avatar';
 import { Typography } from 'components/atoms/Typography';
@@ -15,7 +16,7 @@ const Hgroup = styled('hgroup')`
 
 export const UserTop = ({ doc }) => {
   // useEffect(() => {
-  //   doc.ref.update(kolyaJson);
+  //   doc.ref.update(anna);
   // }, []);
   return (
     <StyledBox>
