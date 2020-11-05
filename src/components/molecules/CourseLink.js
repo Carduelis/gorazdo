@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { MdOpenInNew } from 'react-icons/md';
+import { Text } from 'components/atoms/Text';
 
 const StyledAnchor = styled('a')`
   margin: ${(props) => props.theme.spacing(1)}px;
@@ -22,7 +23,7 @@ const StyledAnchor = styled('a')`
 export const CourseLink = ({ title, link }) => {
   return (
     <StyledAnchor href={link} target="_blank" rel="noopener noreferrer">
-      {title}
+      <Text value={title} />
       <MdOpenInNew />
     </StyledAnchor>
   );

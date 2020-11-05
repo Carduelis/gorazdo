@@ -35,7 +35,7 @@ export const Person = () => {
                     <Text doc={doc} path="about" />
                   </Typography>
                 </ContentItemWrapper>
-                {doc.get('content').map((contentItem) => (
+                {doc.get('content')?.map((contentItem) => (
                   <ContentItemMap contentItem={contentItem} />
                 ))}
               </React.Fragment>
