@@ -5,24 +5,26 @@
   "content": [
     {
       "items": [
-        { "title": "HTML Academy Javascript" },
-        { "title": "Basic React" }
+        { "title": "HTML Academy Javascript", "link": "https://htmlacademy.ru/courses"},
+        { "title": "CSS+HTML", "link": "https://htmlacademy.ru/courses" },
+        { "title": "Fundamentals of programming", "link": "https://www.udemy.com/course/ittensive-programmer-basic/" },
+        { "title": "Basic React", "link": "https://reactjs.org/community/courses.html" }
       ],
-      "title": { "en": "Courses" },
+      "title": { "en": "Courses", "ru": "Курсы" },
       "type": "list-item"
     },
     {
       "items": [
         {
-          "title": "Russian Presidential Academy of National Economy And Public Administration (RANEPA)"
+          "title": { "en": "Russian Presidential Academy of National Economy And Public Administration (RANEPA)", "ru": "Российская Академия Народного Хозяйства и Государственной Службы (РАНХиГС)"}
         }
       ],
-      "title": { "en": "Education" },
+      "title": { "en": "Education", "ru": "Образование" },
       "type": "list-item-full"
     }
   ],
   "firstName": { "en": "Nikolay", "ru": "Николай" },
-  "lastName": { "en": "Nelidov" },
+  "lastName": { "en": "Nelidov",  "ru": "Нелидов" },
   "name": "NikolayNelidov",
-  "profession": { "en": "Junior Front-end Developer" }
+  "profession": { "en": "Junior Front-end Developer",  "ru": "Junior Front-end Разработчик" }
 }
