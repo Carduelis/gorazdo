@@ -1,12 +1,14 @@
 {
     "about": {
-      "en": "I’m a 27-year-old girl with a sociological degree and experience in banking analytics. For two years I had been helping to sell bank products, hire people and prevent fraud in the best online Russian bank."
+      "en": "I’m a 27-year-old girl with a sociological degree and experience in banking analytics. 
+            For two years I had been helping to sell bank products, hire people and prevent fraud in the best online Russian bank.",
+      "ru": "Лолкекчебурек"
     },
     "content": [
       {
         "items": [
-          { "title": "Построение аналитической платформы (Tinkoff Fintech)", "link": "https://fintech.tinkoff.ru/study/fintech/dwh/"},
-          { "title": "Learn Python 2 (Codeacademy)", "link": "https://www.codecademy.com/learn/learn-python" }
+          { "title": {"ru": "Построение аналитической платформы (Tinkoff Fintech)"}, "link": "https://fintech.tinkoff.ru/study/fintech/dwh/"},
+          { "title": {"ru": "Learn Python 2 (Codeacademy)"}, "link": "https://www.codecademy.com/learn/learn-python" }
         ],
         "title": { "en": "Courses", "ru": "Курсы" },
         "type": "list-item"
