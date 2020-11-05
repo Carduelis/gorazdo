@@ -29,10 +29,11 @@ export const Person = () => {
           <section>
             {value.docs.map((doc) => (
               <React.Fragment key={doc.id}>
-                {console.log(doc.data())}
                 <UserTop doc={doc} />
-                <ContentItemWrapper title={{ en: 'About' }} component="p">
-                  <Text doc={doc} path="about" />
+                <ContentItemWrapper title={{ en: 'About', ru: 'О себе' }}>
+                  <Typography variant="body1" component="p">
+                    <Text doc={doc} path="about" />
+                  </Typography>
                 </ContentItemWrapper>
                 {doc.get('content').map((contentItem) => (
                   <ContentItemMap contentItem={contentItem} />

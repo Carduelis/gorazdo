@@ -1,20 +1,32 @@
 import React from 'react';
 import { Typography } from 'components/atoms/Typography';
 import { PanelArticles } from 'components/molecules/PanelArticles';
+import { Text } from 'components/atoms/Text';
+import { CourseLink } from 'components/molecules/CourseLink';
+import styled from 'styled-components';
+
+const StyledSection = styled('section')`
+  margin-top: ${(props) => props.theme.spacing(5)}px;
+  margin-bottom: ${(props) => props.theme.spacing(5)}px;
+  padding-left: ${(props) => props.theme.spacing(6)}px;
+  padding-right: ${(props) => props.theme.spacing(6)}px;
+`;
 
 export const ContentItemWrapper = (props) => {
   const { title, children, component } = props;
   const Component = component;
   return (
-    <section>
-      <Typography variant="h4">{title.en}</Typography>
+    <StyledSection>
+      <Typography variant="h4" gutterBottom>
+        {title.en}
+      </Typography>
       <Component>{children}</Component>
-    </section>
+    </StyledSection>
   );
 };
 
 ContentItemWrapper.defaultProps = {
-  component: 'ul',
+  component: 'div',
 };
 
 export const ContentItemMap = (props) => {
@@ -25,7 +37,7 @@ export const ContentItemMap = (props) => {
       <ContentItemWrapper title={contentItem.title} component="ol">
         {contentItem.items.map((item) => (
           <li>
-            <Typography variant="h6">{item.title}</Typography>
+            <CourseLink title={item.title} link={item.link} />
           </li>
         ))}
       </ContentItemWrapper>
@@ -35,14 +47,12 @@ export const ContentItemMap = (props) => {
     return (
       <ContentItemWrapper title={contentItem.title}>
         {contentItem.items.map((item) => (
-          <li>
-            <PanelArticles
-              title={item.title}
-              colorTag={[]}
-              cover={item.cover ? item.cover : 'http://placekitten.com/50/50'}
-              alt={item.cover ? 'Cover' : 'No cover'}
-            />
-          </li>
+          <PanelArticles
+            title={<Text value={item.title} />}
+            colorTag={[]}
+            cover={item.cover ? item.cover : 'http://placekitten.com/50/50'}
+            alt={item.cover ? 'Cover' : 'No cover'}
+          />
         ))}
       </ContentItemWrapper>
     );

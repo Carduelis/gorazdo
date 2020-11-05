@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const StyledComponent = styled('span')`
   display: block;
   margin: 0;
+  margin-bottom: ${(props) => (props.gutterBottom ? '0.5em' : 0)};
   padding: 0;
   color: ${(props) => props.theme.palette.text.primary};
   font-size: ${(props) => props.theme.typography[props.variant].fontSize};
@@ -28,6 +29,7 @@ Typography.propTypes = {
     'h5',
     'h6',
   ]),
+  gutterBottom: PropTypes.bool,
 };
 
 Typography.defaultProps = {};
