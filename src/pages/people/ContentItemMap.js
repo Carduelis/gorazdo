@@ -6,10 +6,10 @@ import { CourseLink } from 'components/molecules/CourseLink';
 import styled from 'styled-components';
 
 const StyledSection = styled('section')`
-  margin-top: ${(props) => props.theme.spacing(5)}px;
-  margin-bottom: ${(props) => props.theme.spacing(5)}px;
-  padding-left: ${(props) => props.theme.spacing(6)}px;
-  padding-right: ${(props) => props.theme.spacing(6)}px;
+  margin-top: ${(props) => props.theme.spacing(5)};
+  margin-bottom: ${(props) => props.theme.spacing(5)};
+  padding-left: ${(props) => props.theme.spacing(6)};
+  padding-right: ${(props) => props.theme.spacing(6)};
 `;
 
 export const ContentItemWrapper = (props) => {
@@ -35,8 +35,8 @@ export const ContentItemMap = (props) => {
   if (type === 'list-item') {
     return (
       <ContentItemWrapper title={contentItem.title} component="ol">
-        {contentItem.items.map((item) => (
-          <li>
+        {contentItem.items.map((item, index) => (
+          <li key={index}>
             <CourseLink title={item.title} link={item.link} />
           </li>
         ))}
@@ -46,8 +46,9 @@ export const ContentItemMap = (props) => {
   if (type === 'list-item-full') {
     return (
       <ContentItemWrapper title={contentItem.title}>
-        {contentItem.items.map((item) => (
+        {contentItem.items.map((item, index) => (
           <PanelArticles
+            key={index}
             title={<Text value={item.title} />}
             colorTag={[]}
             cover={item.cover ? item.cover : 'http://placekitten.com/50/50'}

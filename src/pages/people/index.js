@@ -3,7 +3,6 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import { useFirestoreRef } from 'hooks';
 import { Text } from 'components/atoms/Text';
 import { Link } from 'react-router-dom';
-import { useWhyDidYouUpdate } from 'hooks/useWhyDidYouUpdate';
 
 export const People = () => {
   const ref = useFirestoreRef((db) => db.collection('people'));

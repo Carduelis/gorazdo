@@ -5,7 +5,7 @@ import { MdOpenInNew } from 'react-icons/md';
 import { Text } from 'components/atoms/Text';
 
 const StyledAnchor = styled('a')`
-  margin: ${(props) => props.theme.spacing(1)}px;
+  margin: ${(props) => props.theme.spacing(1)};
   display: inline-block;
   position: relative;
   & > svg {

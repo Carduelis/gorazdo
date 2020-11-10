@@ -7,15 +7,15 @@ import PropTypes from 'prop-types';
 */
 
 const TagBack = styled('div')`
-  height: ${(props) => props.theme.spacing(3) + 'px'};
-  border-radius: ${(props) => props.theme.spacing(2) + 'px'};
+  height: ${(props) => props.theme.spacing(3)};
+  border-radius: ${(props) => props.theme.spacing(2)};
   background: ${(props) => props.tagColor};
-  padding-left: ${(props) => props.theme.spacing(1.5) + 'px'};
-  padding-right: ${(props) => props.theme.spacing(1.5) + 'px'};
+  padding-left: ${(props) => props.theme.spacing(1.5)};
+  padding-right: ${(props) => props.theme.spacing(1.5)};
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: ${(props) => props.theme.spacing(1) + 'px'};
+  margin-right: ${(props) => props.theme.spacing(1)};
 `;
 
 const TagText = styled('span')`

@@ -1,7 +1,9 @@
 import { color } from '../color';
-import { createMuiTheme } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core/styles';
+import protoTheme from './proto';
 
 const light = createMuiTheme({
+  ...protoTheme,
   name: 'light',
   type: 'light',
   palette: {

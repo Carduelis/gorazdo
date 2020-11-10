@@ -1,13 +1,5 @@
 import { useEffect, useState, useReducer, useMemo } from 'react';
 
-const getFirebase = () => {
-  const isFirebaseAvailable = typeof firebase !== 'undefined';
-  if (isFirebaseAvailable) {
-    return window.firebase;
-  }
-  return null;
-};
-
 const getFirebaseAppInstance = () => {
   try {
     const isFirebaseAvailable = typeof firebase !== 'undefined';
@@ -18,7 +10,9 @@ const getFirebaseAppInstance = () => {
     }
     return null;
   } catch (error) {
-    console.error(error.message);
+    if (!error.message.includes('app/no-app')) {
+      console.error(error);
+    }
     return null;
   }
 };
@@ -36,7 +30,11 @@ export const useFirebaseApp = () => {
         const app = getFirebaseAppInstance();
         const features = Array.from(app.container.providers.keys());
         setFirebaseInstance(app);
-        console.log(`Firebase SDK loaded with ${features.join(', ')}`);
+        console.groupCollapsed(
+          `Firebase SDK loaded with ${features.length} modules`
+        );
+        console.log(features);
+        console.groupEnd();
       } catch (error) {
         console.error(error);
         setFirebaseInstance(null);
@@ -156,4 +154,8 @@ const fetchData = async ({ aborted, dispatch, ref }) => {
       });
     }
   }
+};
+
+export const useCurrentUser = () => {
+  return useFirebase()?.auth()?.currentUser ?? null;
 };
