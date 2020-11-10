@@ -1,1 +1,58 @@
-{}
+{
+    "about": {
+      "en": "",
+      "ru": "Последние несколько лет работаю аналитиком в бэкенде. Пришло время освоить фронт ;)"
+    },
+    "content": [
+      {
+        "items": [
+            {
+           "title": { "en": "System Analyst", "ru": "Системный аналитик" }
+            },
+             {
+               "title": { "en": "Data Analyst", "ru": "Аналитик данных" }
+            }],
+        "title": { "en": "Experience", "ru": "Опыт работы" },
+        "type": "list-item"
+      },
+      {
+        "items": [
+          {
+            "title": { "en": "Russian Technological University (MIREA)", "ru": "Российский технологический университет (МИРЭА)"},
+            "qualification": {"en": "Master’s Degree in Computer science", "ru": "Специалет по направлению 'Информационные системы и технологии'"}
+          }
+        ],
+        "title": { "en": "Education", "ru": "Образование" },
+        "type": "list-item-full"
+      },
+      {
+        "items": [
+          {
+            "title": { "en": "Attention to details", "ru": "Внимание к деталям"}
+          },
+          {
+            "title": { "en": "Perseverance", "ru": "Настойчивость"}
+          },
+          {
+            "title": { "en": "Patience", "ru": "Терпение"}
+          }
+        ],
+        "title": { "en": "Personal qualities", "ru": "Личные качества" },
+        "type": "list-item-full"
+      },
+      {"items": [
+        { "title": ""},
+        { "title": ""},
+        { "title": ""}
+      ]
+    ,
+      "title": { "en": "Hard skills", "ru": "Профессиональные навыки" },
+      "type": "list-item-full"
+    }
+    ],
+    "firstName": { "en": "Ekaterina", "ru": "Екатерина" },
+    "lastName": { "en": "Pichugina",  "ru": "Пичугина" },
+    "name": "EkaterinaPichugina",
+    "profession": { "en": "Junior Front-end Developer",  "ru": "Junior Front-end Разработчик" }
+  }
+  
