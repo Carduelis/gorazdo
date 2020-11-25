@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useCurrentUser, useFirestoreRef } from 'hooks';
 import { UserTop } from 'components/molecules/UserTop';
-import { ContentItemWrapper, ContentItemMap } from './ContentItemMap';
+import { ContentItemMap } from './ContentItemMap';
 import {
-  Typography,
-  Card,
   CardContent,
-  InputAdornment,
   List,
   ListItem,
   ListItemText,
   ListItemSecondaryAction,
 } from '@material-ui/core';
 import { Text } from 'components/atoms/Text';
-import { TextField, IconButton, Paper } from '@material-ui/core';
-import { MdSave, MdDelete } from 'react-icons/md';
+import { IconButton } from '@material-ui/core';
+import { MdDelete } from 'react-icons/md';
 import { useCollection } from 'react-firebase-hooks/firestore';
+import { AddSection } from './AddContent';
 
 export const MainPortfolio = ({ doc }) => {
   const me = useCurrentUser();
@@ -70,48 +68,4 @@ const ContentSections = ({ doc }) => {
     );
   }
   return null;
-};
-
-const AddSection = ({ doc }) => {
-  const [value, setValue] = useState('Hi!');
-  const handleAdd = (event) => {
-    event.preventDefault();
-    doc.ref
-      .collection('sections')
-      .doc(value)
-      .set({
-        title: {
-          en: `A section ${Math.random()}`,
-          ru: 'Название секции',
-        },
-      })
-      .then(function () {
-        console.log('Document successfully written!');
-      })
-      .catch(function (error) {
-        console.error('Error writing document: ', error);
-      });
-  };
-
-  return (
-    <Card component="form" onSubmit={handleAdd}>
-      <CardContent>
-        <TextField
-          value={value}
-          onChange={(event) => setValue(event.target.value)}
-          variant="outlined"
-          label="Добавить новую секцию"
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton type="submit">
-                  <MdSave />
-                </IconButton>
-              </InputAdornment>
-            ),
-          }}
-        />
-      </CardContent>
-    </Card>
-  );
 };
