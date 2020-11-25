@@ -9,11 +9,11 @@ export const AddSection = ({ doc }) => {
     event.preventDefault();
     doc.ref
       .collection('sections')
-      .doc(value)
+      .doc()
       .set({
         title: {
-          en: `A section ${Math.random()}`,
-          ru: 'Название секции',
+          en: value,
+          ru: `ru: ${value}`,
         },
       })
       .then(function () {
@@ -32,6 +32,7 @@ export const AddSection = ({ doc }) => {
           onChange={(event) => setValue(event.target.value)}
           variant="outlined"
           label="Добавить новую секцию"
+          helperText="Ввести название секции"
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
