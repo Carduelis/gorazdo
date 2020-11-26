@@ -13,7 +13,7 @@ export const Admin = () => {
   );
 };
 
-export const FirebaseAuthContent = ({}) => {
+export const FirebaseAuthContent = () => {
   const auth = window.firebase.auth;
   const user = window.firebase.auth().currentUser;
   const ref = useRef();

@@ -1,0 +1,40 @@
+{
+  "about": {
+    "en": "I’m a 27-year-old girl with a sociological degree and experience in banking analytics.\nFor two years I had been helping to sell bank products, hire people and prevent fraud in the best online Russian bank.",
+    "ru": "Лолкекчебурек"
+  },
+  "content": [
+    {
+      "items": [
+        {
+          "title": {
+            "ru": "Построение аналитической платформы (Tinkoff Fintech)"
+          },
+          "link": "https://fintech.tinkoff.ru/study/fintech/dwh/"
+        },
+        {
+          "title": { "ru": "Learn Python 2 (Codeacademy)" },
+          "link": "https://www.codecademy.com/learn/learn-python"
+        }
+      ],
+      "title": { "en": "Courses", "ru": "Курсы" },
+      "type": "list-item"
+    },
+    {
+      "items": [
+        {
+          "title": {
+            "en": "Moscow State University",
+            "ru": "МГУ им М.В.Ломоносова"
+          }
+        }
+      ],
+      "title": { "en": "Education", "ru": "Образование" },
+      "type": "list-item-full"
+    }
+  ],
+  "firstName": { "en": "Anna", "ru": "Анна" },
+  "lastName": { "en": "Sitnikova", "ru": "Ситникова" },
+  "name": "AnnaSitnikova",
+  "profession": { "en": "Data Analyst", "ru": "Аналитик данных" }
+}

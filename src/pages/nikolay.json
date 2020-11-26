@@ -1,0 +1,30 @@
+{
+  "about": {
+    "en": "I am a newbie front-end developer. I don't have much experience, but a lot of desire and diligence. Soon, there will be many projects and activities. So stay tuned."
+  },
+  "content": [
+    {
+      "items": [
+        { "title": "HTML Academy Javascript", "link": "https://htmlacademy.ru/courses"},
+        { "title": "CSS+HTML", "link": "https://htmlacademy.ru/courses" },
+        { "title": "Fundamentals of programming", "link": "https://www.udemy.com/course/ittensive-programmer-basic/" },
+        { "title": "Basic React", "link": "https://reactjs.org/community/courses.html" }
+      ],
+      "title": { "en": "Courses", "ru": "Курсы" },
+      "type": "list-item"
+    },
+    {
+      "items": [
+        {
+          "title": { "en": "Russian Presidential Academy of National Economy And Public Administration (RANEPA)", "ru": "Российская Академия Народного Хозяйства и Государственной Службы (РАНХиГС)"}
+        }
+      ],
+      "title": { "en": "Education", "ru": "Образование" },
+      "type": "list-item-full"
+    }
+  ],
+  "firstName": { "en": "Nikolay", "ru": "Николай" },
+  "lastName": { "en": "Nelidov",  "ru": "Нелидов" },
+  "name": "NikolayNelidov",
+  "profession": { "en": "Junior Front-end Developer",  "ru": "Junior Front-end Разработчик" }
+}

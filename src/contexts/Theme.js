@@ -1,9 +1,13 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 import dark from 'styles/themes/dark';
 import light from 'styles/themes/light';
 import { useSessionStorageState } from 'hooks/useSessionStorageState';
+import {
+  CssBaseline,
+  ThemeProvider as MUIThemeProvider,
+} from '@material-ui/core';
 
 const themes = { dark, light };
 
@@ -36,7 +40,12 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={[themeName, toggleTheme]}>
-      <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
+      <StyledThemeProvider theme={theme}>
+        <MUIThemeProvider theme={theme}>
+          <CssBaseline />
+          {children}
+        </MUIThemeProvider>
+      </StyledThemeProvider>
     </ThemeContext.Provider>
   );
 };

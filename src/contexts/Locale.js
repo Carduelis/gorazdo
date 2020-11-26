@@ -2,6 +2,7 @@ import React, { createContext } from 'react';
 import { useSessionStorageState } from 'hooks/useSessionStorageState';
 
 export const FALLBACK_LOCALE = 'en';
+export const FALLBACK_LOCALE_2 = 'ru';
 export const AVAILABLE_LOCALES = ['en', 'ru'];
 
 export const LocaleContext = createContext(null);

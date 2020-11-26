@@ -5,7 +5,11 @@ import React, {
   useEffect,
   useLayoutEffect,
 } from 'react';
-import { LocaleContext, FALLBACK_LOCALE } from 'contexts/Locale';
+import {
+  LocaleContext,
+  FALLBACK_LOCALE,
+  FALLBACK_LOCALE_2,
+} from 'contexts/Locale';
 
 const extractLocale = (value, locale) => {
   if (typeof value === 'object') {
@@ -14,6 +18,9 @@ const extractLocale = (value, locale) => {
     }
     if (FALLBACK_LOCALE in value) {
       return value[FALLBACK_LOCALE];
+    }
+    if (FALLBACK_LOCALE_2 in value) {
+      return `[${FALLBACK_LOCALE_2}] ${value[FALLBACK_LOCALE_2]}`;
     }
     return JSON.stringify(value);
   }

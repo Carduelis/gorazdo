@@ -14,8 +14,8 @@ const FONT_SIZES_DICTIONARY = {
   big: '18px',
 };
 
-const getHeight = (props) => SIZES_FACTORS[props.$size] * 8 + 'px';
-const getHalfHeight = (props) => SIZES_FACTORS[props.$size] * 4 + 'px';
+const getHeight = (props) => SIZES_FACTORS[props.$size] * 8;
+const getHalfHeight = (props) => SIZES_FACTORS[props.$size] * 4;
 
 const BadgeBack = styled('div')`
   height: ${getHeight};

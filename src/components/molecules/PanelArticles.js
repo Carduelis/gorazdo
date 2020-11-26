@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Typography } from 'components/atoms/Typography';
 import { Tag } from 'components/atoms/Tag';
 
-const SquarePicture = styled('div')`
+const SquarePicture = styled('img')`
   height: 80px;
   width: 80px;
-  border-radius: ${(props) => props.theme.spacing(1) + 'px'};
+  border-radius: ${(props) => props.theme.spacing(1)};
   background: ${(props) => props.theme.palette.action.selected};
 `;
 
@@ -15,9 +14,9 @@ const PanelContainer = styled('div')`
   display: flex;
   height: 112px;
   width: 752px;
-  border-radius: ${(props) => props.theme.spacing(2) + 'px'};
-  padding-left: ${(props) => props.theme.spacing(1) + 'px'};
-  padding-right: ${(props) => props.theme.spacing(1) + 'px'};
+  border-radius: ${(props) => props.theme.spacing(2)};
+  padding-left: ${(props) => props.theme.spacing(1)};
+  padding-right: ${(props) => props.theme.spacing(1)};
   justify-content: space-around;
   align-items: center;
   background: ${(props) => props.theme.palette.action.hover};
@@ -39,7 +38,7 @@ const StyledTitle = styled('div')`
 const TagsContainer = styled('div')`
   display: flex;
   justify-content: space-between;
-  padding-top: ${(props) => props.theme.spacing(1) + 'px'};
+  padding-top: ${(props) => props.theme.spacing(1)};
 `;
 
 const Date = styled('span')`
@@ -71,10 +70,10 @@ const COLOR_FACTORS = [
     textColor: '#F15D23',
   },
 ];
-export const PanelArticles = ({ title, colorTag }) => {
+export const PanelArticles = ({ title, cover, alt, colorTag }) => {
   return (
     <PanelContainer>
-      <SquarePicture></SquarePicture>
+      <SquarePicture src={cover} alt={alt} />
       <TextContainer>
         <StyledTitle>{title}</StyledTitle>
         <SecondLineContainer>
@@ -96,7 +95,6 @@ export const PanelArticles = ({ title, colorTag }) => {
 };
 
 PanelArticles.propTypes = {
-  title: PropTypes.string,
   colorTag: PropTypes.arrayOf(
     PropTypes.shape({
       color: PropTypes.string,
@@ -108,6 +106,5 @@ PanelArticles.propTypes = {
 };
 
 PanelArticles.defaultProps = {
-  title: 'Анонс новой версии Styled Components v5: Звериный оскал',
   colorTag: COLOR_FACTORS,
 };
