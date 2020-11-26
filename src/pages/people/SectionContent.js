@@ -4,7 +4,6 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 export const SectionContent = ({ doc, userDoc }) => {
   const ref = useFirestoreRef(() => doc.ref.collection('items'));
   const [collection, loading, error] = useCollection(ref);
-  console.log({ collection, loading, error });
 
   if (loading) {
     return 'loading';

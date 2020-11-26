@@ -1,12 +1,5 @@
-import React, { useState } from 'react';
-import {
-  Card,
-  CardContent,
-  Typography,
-  Divider,
-  Button,
-  Drawer,
-} from '@material-ui/core';
+import React from 'react';
+import { Card, CardContent, Typography, Divider } from '@material-ui/core';
 import { Text } from 'components/atoms/Text';
 import { DeleteDocumentButton } from './DeleteDocumentButton';
 import { SectionContent } from './SectionContent';

@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams } from 'react-router';
 import { useFirestoreRef } from 'hooks';
 import { useCollection } from 'react-firebase-hooks/firestore';
-import styled from 'styled-components';
 import { MainPortfolio } from './MainPortfolio';
 import { Typography } from '@material-ui/core';
 
@@ -13,10 +12,7 @@ export const Person = () => {
     db.collection('people').where('name', '==', name)
   );
   const [collection, loading, error] = useCollection(ref);
-  console.log(collection);
   return (
-    // <StyledGrid>
-    //   <StyledBackground></StyledBackground>
     <div>
       {error && <strong>Error: {JSON.stringify(error)}</strong>}
       {loading && <span>Collection: Loading...</span>}
@@ -33,20 +29,5 @@ export const Person = () => {
         </section>
       )}
     </div>
-    // </StyledGrid>
   );
 };
-
-const StyledGrid = styled('div')`
-  display: grid;
-  grid-template-columns: ${(props) => props.theme.spacing(50)} auto;
-`;
-
-const StyledBackground = styled('div')`
-  background-color: #5f75ee;
-  border-top-right-radius: ${(props) => props.theme.spacing(6)};
-  border-bottom-right-radius: ${(props) => props.theme.spacing(6)};
-  min-height: 40vh;
-  margin-right: ${(props) => props.theme.spacing(5)};
-  margin-top: ${(props) => props.theme.spacing(3)};
-`;

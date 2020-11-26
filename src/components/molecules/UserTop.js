@@ -17,7 +17,7 @@ export const UserTop = ({ doc }) => {
   // useEffect(() => {
   //   doc.ref.update(anna);
   // }, []);
-  console.log(doc);
+  console.log({ userDocument: doc });
   return (
     <StyledBox>
       <Avatar url={doc.get('avatar')} size={12} />
