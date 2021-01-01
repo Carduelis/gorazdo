@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useRef } from 'react';
-import { useFirebaseApp } from 'hooks';
+import { useFirebaseApp } from 'src/hooks';
 export const FirebaseAuthUIContext = createContext();
 
 const setClose = () => console.log('Auth bar is closing');
@@ -10,7 +10,11 @@ const useFirebaseui = () => {
     if (window.firebaseui) {
       setFirebaseui(window.firebaseui);
     }
-    document.getElementById('firebaseUIScript').onload = () => {
+    const firebaseScriptTag = document.getElementById('firebaseUIScript');
+    if (firebaseScriptTag === null) {
+      throw new Error('Firebase Auth Script was not found');
+    }
+    firebaseScriptTag.onload = () => {
       setFirebaseui(window.firebaseui);
     };
   }, []);

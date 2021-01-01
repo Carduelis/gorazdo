@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 
 const sessionGet = (key) => {
-  return JSON.parse(window.sessionStorage.getItem(key));
+  try {
+    return JSON.parse(window.sessionStorage.getItem(key));
+  } catch {
+    return null;
+  }
 };
 
 const sessionSet = (key, value) => {

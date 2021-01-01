@@ -1,5 +1,5 @@
-import React, { createContext, useState } from 'react';
-import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import React, { createContext } from 'react';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 
 import dark from 'styles/themes/dark';
 import light from 'styles/themes/light';
@@ -10,6 +10,9 @@ const themes = { dark, light };
 export const ThemeContext = createContext(null);
 
 const useDefaultTheme = () => {
+  if (typeof window === 'undefined') {
+    return 'light';
+  }
   if (
     window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -36,7 +39,7 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={[themeName, toggleTheme]}>
-      <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
+      <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
     </ThemeContext.Provider>
   );
 };

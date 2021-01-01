@@ -100,4 +100,4 @@ const WelcomeTitle = (props) => {
   );
 };
 
-export default WelcomeTitle;
+export { WelcomeTitle };

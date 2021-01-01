@@ -1,40 +1,16 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
-import Box from '../atoms/Box';
+import Box from 'src/components/atoms/Box';
+import Link from 'next/link';
 import Switch from 'react-switch';
-import { Link } from 'react-router-dom';
-import { LocaleContext } from 'contexts/Locale';
-import { ThemeContext } from 'contexts/Theme';
+import { LocaleContext } from 'src/contexts/Locale';
+import { ThemeContext } from 'src/contexts/Theme';
 
-const FixedHeader = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5rem;
-  z-index: 10;
-  width: 100%;
-  line-height: 5rem;
-  font-size: 1.25em;
-  background-color: rgba(0, 0, 0, 0.4);
-`;
-
-const StyledTitle = styled('h1')`
-  margin: 0;
-`;
-
-const HeaderPlaceholder = styled.div`
-  height: 5rem;
-`;
 const Header = () => {
   return (
     <>
-      <HeaderPlaceholder />
-      <FixedHeader>
+      <header>
         <Box fullHeight justify="space-around" alignItems="baseline">
-          <StyledTitle>
-            <Link to="/projects">Gorazdo.studio</Link>
-          </StyledTitle>
+          <Link href="/projects">Gorazdo.studio</Link>
           <span>
             <a href="mailto:tomova.design@gmail.com">@Contact us</a>
           </span>
@@ -43,7 +19,7 @@ const Header = () => {
             <LocaleSwitch />
           </Box>
         </Box>
-      </FixedHeader>
+      </header>
     </>
   );
 };
@@ -64,4 +40,5 @@ const LocaleSwitch = () => {
   };
   return <Switch onChange={handleSwitchLocale} checked={locale === 'en'} />;
 };
-export default Header;
+
+export { Header };
